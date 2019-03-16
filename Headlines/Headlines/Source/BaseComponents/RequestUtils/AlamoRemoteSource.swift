@@ -16,7 +16,7 @@ public class AlamoRemoteSource {
     private let baseURL = URL(string: "https://newsapi.org/v2/top-headlines")!
     private var parameters: [String: String] = [:]
     
-    public func getTopHeadlines() -> Single<NoContent> {
+    public func getTopHeadlines() -> Single<HeadlineList> {
         var request = URLRequest(url: baseURL)
         request.httpMethod = "GET"
         parameters["apiKey"] = "0a30c22796004890a22d42bb0e697237"
@@ -28,23 +28,12 @@ public class AlamoRemoteSource {
                 self.manager
                     .request(request)
                     .responseData(queue: DispatchQueue.global())
-                }
-            .map { (data, resp) in
-                    return NoContent(data: data)
+            }.map { tuple in
+                return try JSONDecoder().decode(HeadlineList.self, from: tuple.0!)
             }.do(onError: { error in
                 print("Error: \(error)")
-            }).asSingle()
-    }
-    
-}
-
-public struct NoContent: Decodable {
-    
-    private(set) var responseValue: String? = nil
-    
-    public init(data: Data?) {
-        guard data != nil else { return }
-        self.responseValue = String(data: data!, encoding: String.Encoding.utf8)
+            })
+            .asSingle()
     }
     
 }

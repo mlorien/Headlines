@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeadlineCell" customModule="Headlines" customModuleProvider="target">
+            <connections>
+                <outlet property="alignLeading" destination="Pde-h5-J3D" id="KBx-Dm-U2I"/>
+                <outlet property="alignTrailing" destination="o01-Q0-pyk" id="aM0-Qr-iDQ"/>
+                <outlet property="superView" destination="iN0-l3-epB" id="ABC-7v-XbF"/>
+                <outlet property="titleLabel" destination="vu7-yx-Lc3" id="fv2-BA-jLG"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="384" height="192"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Gambino underboss 'Franky Boy' Cali may have fallen into deadly trap set up by fender bender - NBC News" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vu7-yx-Lc3">
+                    <rect key="frame" x="20" y="10" width="288" height="172"/>
+                    <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="21"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vu7-yx-Lc3" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="Ewh-lT-tdl"/>
+                <constraint firstAttribute="bottom" secondItem="vu7-yx-Lc3" secondAttribute="bottom" constant="10" id="GNP-vx-egD"/>
+                <constraint firstItem="vu7-yx-Lc3" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" priority="999" constant="20" id="Pde-h5-J3D"/>
+                <constraint firstItem="vu7-yx-Lc3" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.75" id="dJf-XO-FdH"/>
+                <constraint firstItem="vu7-yx-Lc3" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="fhy-LU-Pm3"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="vu7-yx-Lc3" secondAttribute="trailing" priority="998" constant="15" id="o01-Q0-pyk"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="145.59999999999999" y="-69.265367316341838"/>
+        </view>
+    </objects>
+</document>
