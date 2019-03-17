@@ -13,8 +13,10 @@ class HeadlinesTableViewController: UIViewController  {
     
     @IBOutlet var contentView: UIView!
     
-    let disposeBag = DisposeBag()
     var headlines: [Headline]!
+    var selectedURL: String!
+    
+    let disposeBag = DisposeBag()
     let lighterGray = "EDF6F7".toUIColor()
 
     override func viewDidLoad() {
@@ -30,6 +32,11 @@ class HeadlinesTableViewController: UIViewController  {
         tableView.dataSource = self
         tableView.separatorStyle = .none
         tableView.backgroundColor = lighterGray
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destination = segue.destination as? WebContentViewController else { return }
+        destination.url = selectedURL
     }
 
 }
@@ -48,6 +55,11 @@ extension HeadlinesTableViewController: UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 400
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedURL = headlines[indexPath.row].url
+        performSegue(withIdentifier: "show", sender: Any?.self)
     }
 
 }

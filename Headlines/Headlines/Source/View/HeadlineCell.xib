@@ -28,16 +28,16 @@
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="EKs-B7-QGC">
-                    <rect key="frame" x="20" y="40" width="387" height="310.5"/>
+                    <rect key="frame" x="20" y="42.5" width="387" height="305.5"/>
                     <subviews>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Trump calls on Fox News to 'bring back' Jeanine Pirro after her show goes off the air - Washington Examiner" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vu7-yx-Lc3">
-                            <rect key="frame" x="5" y="0.0" width="377" height="97.5"/>
+                            <rect key="frame" x="5" y="0.0" width="377" height="92.5"/>
                             <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
-                            <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="20"/>
+                            <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="19"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8is-6U-BE3">
-                            <rect key="frame" x="0.0" y="107.5" width="387" height="203"/>
+                            <rect key="frame" x="0.0" y="102.5" width="387" height="203"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="aUTHOR" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4El-U8-z65">
                             <rect key="frame" x="0.0" y="307" width="387" height="21"/>
