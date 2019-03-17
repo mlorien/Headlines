@@ -48,15 +48,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00AC2DA01175CDF34DA21A6C /* Pods-HeadlinesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeadlinesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HeadlinesTests/Pods-HeadlinesTests.debug.xcconfig"; sourceTree = "<group>"; };
-		066F94627D22B47388F90F70 /* Pods-HeadlinesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeadlinesUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HeadlinesUITests/Pods-HeadlinesUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		0F246A15A54B21AD360EB843 /* Pods-HeadlinesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeadlinesTests.debug.xcconfig"; path = "Target Support Files/Pods-HeadlinesTests/Pods-HeadlinesTests.debug.xcconfig"; sourceTree = "<group>"; };
-		27570BEC5C64CF8252CFB0F3 /* Pods-Headlines.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Headlines.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Headlines/Pods-Headlines.debug.xcconfig"; sourceTree = "<group>"; };
 		344D1052C55FBABEE6A30958 /* Pods_HeadlinesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HeadlinesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		39C5F225B8EB43F58D85B0CA /* Pods-HeadlinesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeadlinesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HeadlinesTests/Pods-HeadlinesTests.release.xcconfig"; sourceTree = "<group>"; };
 		57046FA960969AFC490CCFFB /* Pods_Headlines.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Headlines.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D62CB25DDD4FF6EE87086D3 /* Pods-Headlines.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Headlines.debug.xcconfig"; path = "Target Support Files/Pods-Headlines/Pods-Headlines.debug.xcconfig"; sourceTree = "<group>"; };
-		87539B8CC4543A36499AC40B /* Pods-Headlines.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Headlines.release.xcconfig"; path = "Pods/Target Support Files/Pods-Headlines/Pods-Headlines.release.xcconfig"; sourceTree = "<group>"; };
 		9186EE3EE1B3D0F4C23BBB43 /* Pods-Headlines.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Headlines.release.xcconfig"; path = "Target Support Files/Pods-Headlines/Pods-Headlines.release.xcconfig"; sourceTree = "<group>"; };
 		931B5A40F6D883F47333F016 /* Pods-HeadlinesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeadlinesUITests.release.xcconfig"; path = "Target Support Files/Pods-HeadlinesUITests/Pods-HeadlinesUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A0DD2D5C5BC2C785198B21D5 /* Pods-HeadlinesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeadlinesTests.release.xcconfig"; path = "Target Support Files/Pods-HeadlinesTests/Pods-HeadlinesTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -461,7 +456,6 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -470,7 +464,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -660,7 +653,7 @@
 		};
 		D09CE34D223B1C0200AFBAF4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 27570BEC5C64CF8252CFB0F3 /* Pods-Headlines.debug.xcconfig */;
+			baseConfigurationReference = 7D62CB25DDD4FF6EE87086D3 /* Pods-Headlines.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
