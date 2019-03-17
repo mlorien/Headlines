@@ -8,14 +8,22 @@
 
 import UIKit
 import RxSwift
+import Lottie
 
 class IntroViewController: UIViewController {
 
     var headlines: [Headline]!
     var disposeBag = DisposeBag()
+//    var animationView: LOT
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    fileprivate func addAnimation() {
+//        animationView = LOTAnimationView(contentsOf: url)
+//        animationView.frame.size = CGSize(width: 90, height: 90)
+//        animationView.contentMode = .scaleAspectFill
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -34,9 +42,9 @@ class IntroViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let destination = segue.destination as? HeadlinesTableViewController else { return }
-//        guard let tableVC = destination.children.first as? HeadlinesTableViewController else { return }
-        destination.headlines = headlines
+        guard let destination = segue.destination as? UINavigationController else { return }
+        guard let tableVC = destination.children.first as? HeadlinesTableViewController else { return }
+        tableVC.headlines = headlines
     }
 
 }

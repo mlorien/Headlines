@@ -21,7 +21,7 @@ class HeadlineCell: UITableViewCell {
     var alignment: NSTextAlignment!
     var imageURL: String!
     
-    let darkBlue = "242D44".toUIColor()
+    let darkBlue = "32363F".toUIColor()
     let lightPink = "D1C6C7".toUIColor()
     let lightGreen = "F2FFF3".toUIColor()
     let red = "C18383".toUIColor()
@@ -64,8 +64,13 @@ class HeadlineCell: UITableViewCell {
     }
     
     fileprivate func setImage() {
+        guard let url = URL(string: imageURL!) else {
+            myImageView.isHidden = true
+            return
+        }
+        myImageView.isHidden = false
         URLSession.shared
-            .dataTask(with: URL(string: imageURL!)!) { (data, response, error) in
+            .dataTask(with: url) { (data, response, error) in
                 guard error == nil else {
                     print(error!)
                     return
@@ -84,8 +89,8 @@ class HeadlineCell: UITableViewCell {
     
     func setup(with headline: Headline, even: Bool) {
         titleText = headline.title//.replacingOccurrences(of: " - ", with: "\n")
-        backgroundColor = lightGray//even ? lightPink : lightGray
-        titleColor = darkBlue//even ? darkBlue : lightPink
+        backgroundColor = lightGray
+        titleColor = darkBlue
         imageURL = headline.urlToImage
     }
     
