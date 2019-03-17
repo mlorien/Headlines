@@ -6,7 +6,7 @@
 //  Copyright © 2019 Lorien Moisyn. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 public struct HeadlineList: Decodable {
     
@@ -24,12 +24,16 @@ public struct Headline: Decodable {
     var title: String!
     var description: String!
     var publishedAt: String!
+    var urlToImage: String!
+    
+    var image: UIImage!
     
     public enum CodingKeys: String, CodingKey {
         case author
         case title
         case description
         case publishedAt
+        case urlToImage
     }
     
 }

@@ -18,6 +18,16 @@ class HeadlinesTableViewController: UIViewController  {
         super.viewDidLoad()
         setupTableView()
         view.backgroundColor = "1F2833".toUIColor()
+        setupNavigationBar()
+    }
+    
+    fileprivate func setupNavigationBar() {
+        guard let bar = navigationController?.navigationBar else { return }
+        bar.setBackgroundImage(UIImage(), for: .default)
+        bar.shadowImage = UIImage()
+        bar.isTranslucent = true
+        bar.barTintColor = .clear
+        bar.tintColor = .white
     }
     
     fileprivate func setupTableView() {

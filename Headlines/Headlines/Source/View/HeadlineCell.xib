@@ -14,7 +14,8 @@
             <connections>
                 <outlet property="alignLeading" destination="Pde-h5-J3D" id="KBx-Dm-U2I"/>
                 <outlet property="alignTrailing" destination="o01-Q0-pyk" id="aM0-Qr-iDQ"/>
-                <outlet property="superView" destination="iN0-l3-epB" id="ABC-7v-XbF"/>
+                <outlet property="coloredView" destination="8di-JQ-KuT" id="Tk6-Jw-pOV"/>
+                <outlet property="imageView" destination="8is-6U-BE3" id="UkQ-cC-BdQ"/>
                 <outlet property="titleLabel" destination="vu7-yx-Lc3" id="fv2-BA-jLG"/>
             </connections>
         </placeholder>
@@ -23,6 +24,13 @@
             <rect key="frame" x="0.0" y="0.0" width="384" height="192"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8is-6U-BE3">
+                    <rect key="frame" x="0.0" y="0.0" width="384" height="192"/>
+                </imageView>
+                <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8di-JQ-KuT">
+                    <rect key="frame" x="0.0" y="0.0" width="384" height="192"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Gambino underboss 'Franky Boy' Cali may have fallen into deadly trap set up by fender bender - NBC News" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vu7-yx-Lc3">
                     <rect key="frame" x="20" y="10" width="288" height="172"/>
                     <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="21"/>
@@ -34,10 +42,18 @@
             <constraints>
                 <constraint firstItem="vu7-yx-Lc3" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="Ewh-lT-tdl"/>
                 <constraint firstAttribute="bottom" secondItem="vu7-yx-Lc3" secondAttribute="bottom" constant="10" id="GNP-vx-egD"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="8is-6U-BE3" secondAttribute="trailing" id="JMY-bo-94b"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="8di-JQ-KuT" secondAttribute="bottom" id="MKR-q5-JZf"/>
+                <constraint firstItem="8di-JQ-KuT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Mwz-vd-QwQ"/>
                 <constraint firstItem="vu7-yx-Lc3" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" priority="999" constant="20" id="Pde-h5-J3D"/>
+                <constraint firstItem="8is-6U-BE3" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="TqB-AJ-pph"/>
+                <constraint firstItem="8di-JQ-KuT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="VAS-Jn-nq6"/>
                 <constraint firstItem="vu7-yx-Lc3" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.75" id="dJf-XO-FdH"/>
                 <constraint firstItem="vu7-yx-Lc3" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="fhy-LU-Pm3"/>
+                <constraint firstItem="8is-6U-BE3" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="nH8-Sq-FW4"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="vu7-yx-Lc3" secondAttribute="trailing" priority="998" constant="15" id="o01-Q0-pyk"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="8is-6U-BE3" secondAttribute="bottom" id="r5o-dK-niQ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="8di-JQ-KuT" secondAttribute="trailing" id="yRb-Eg-C6h"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
