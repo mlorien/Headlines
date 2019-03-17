@@ -99,15 +99,30 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NRP-5I-Rep">
+                                <rect key="frame" x="87.5" y="288.5" width="200" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="408-oZ-u8y"/>
+                                    <constraint firstAttribute="height" constant="110" id="u78-SQ-WiO"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="NRP-5I-Rep" firstAttribute="centerX" secondItem="ePP-uc-V86" secondAttribute="centerX" id="ClU-Xh-xME"/>
+                            <constraint firstItem="NRP-5I-Rep" firstAttribute="centerY" secondItem="ePP-uc-V86" secondAttribute="centerY" id="Hvb-ke-fYd"/>
                             <constraint firstItem="M2B-DE-fms" firstAttribute="centerX" secondItem="ePP-uc-V86" secondAttribute="centerX" id="RQH-TI-0Kk"/>
                             <constraint firstItem="M2B-DE-fms" firstAttribute="centerY" secondItem="ePP-uc-V86" secondAttribute="centerY" id="vPh-Nd-ugX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ePP-uc-V86"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="M2B-DE-fms"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
+                        <outlet property="stackVie" destination="NRP-5I-Rep" id="q9b-Hv-3FC"/>
                         <segue destination="ZN8-Cb-UXZ" kind="show" identifier="show" id="3pH-CU-QJh"/>
                     </connections>
                 </viewController>

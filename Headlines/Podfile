@@ -6,7 +6,9 @@ target 'Headlines' do
   use_frameworks!
     pod 'Alamofire', '~> 4.6'
     pod 'RxSwift', '~> 4.0'
-
+    pod 'lottie-ios'
+    pod 'R.swift'
+    
   # Pods for Headlines
 
   target 'HeadlinesTests' do

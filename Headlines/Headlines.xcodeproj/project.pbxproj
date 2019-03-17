@@ -11,6 +11,9 @@
 		B6AB48168ECF699A25E74F21 /* Pods_Headlines.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57046FA960969AFC490CCFFB /* Pods_Headlines.framework */; };
 		D0316ACC223ED8ED004C4192 /* WebContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0316ACB223ED8ED004C4192 /* WebContentViewController.swift */; };
 		D0316ACE223EDF6C004C4192 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = D0316ACD223EDF6B004C4192 /* loading.json */; };
+		D041670F223EF5F7004FDA7E /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D041670E223EF5F7004FDA7E /* R.generated.swift */; };
+		D0416711223EF651004FDA7E /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = D0416710223EF651004FDA7E /* loading.json */; };
+		D0416713223EFBE0004FDA7E /* loading2.json in Resources */ = {isa = PBXBuildFile; fileRef = D0416712223EFBE0004FDA7E /* loading2.json */; };
 		D09CE326223B1C0100AFBAF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09CE325223B1C0100AFBAF4 /* AppDelegate.swift */; };
 		D09CE328223B1C0100AFBAF4 /* HeadlinesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09CE327223B1C0100AFBAF4 /* HeadlinesTableViewController.swift */; };
 		D09CE32D223B1C0100AFBAF4 /* Headline.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D09CE32B223B1C0100AFBAF4 /* Headline.storyboard */; };
@@ -59,6 +62,9 @@
 		BD64CF328FA171DA798E341C /* Pods_HeadlinesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HeadlinesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0316ACB223ED8ED004C4192 /* WebContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebContentViewController.swift; sourceTree = "<group>"; };
 		D0316ACD223EDF6B004C4192 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
+		D041670E223EF5F7004FDA7E /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		D0416710223EF651004FDA7E /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
+		D0416712223EFBE0004FDA7E /* loading2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading2.json; sourceTree = "<group>"; };
 		D09CE322223B1C0100AFBAF4 /* Headlines.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Headlines.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D09CE325223B1C0100AFBAF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D09CE327223B1C0100AFBAF4 /* HeadlinesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlinesTableViewController.swift; sourceTree = "<group>"; };
@@ -159,6 +165,7 @@
 		D09CE324223B1C0100AFBAF4 /* Headlines */ = {
 			isa = PBXGroup;
 			children = (
+				D041670E223EF5F7004FDA7E /* R.generated.swift */,
 				D09CE325223B1C0100AFBAF4 /* AppDelegate.swift */,
 				D09CE333223B1C0200AFBAF4 /* Info.plist */,
 				D09CE363223BE9A600AFBAF4 /* Source */,
@@ -224,6 +231,8 @@
 		D09CE364223BE9AF00AFBAF4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D0416710223EF651004FDA7E /* loading.json */,
+				D0416712223EFBE0004FDA7E /* loading2.json */,
 				D09CE32E223B1C0200AFBAF4 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -254,6 +263,7 @@
 			buildConfigurationList = D09CE34C223B1C0200AFBAF4 /* Build configuration list for PBXNativeTarget "Headlines" */;
 			buildPhases = (
 				87D0622CDC2A6DB2F6886194 /* [CP] Check Pods Manifest.lock */,
+				D041670D223EF568004FDA7E /* ShellScript */,
 				D09CE31E223B1C0100AFBAF4 /* Sources */,
 				D09CE31F223B1C0100AFBAF4 /* Frameworks */,
 				D09CE320223B1C0100AFBAF4 /* Resources */,
@@ -354,8 +364,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0416713223EFBE0004FDA7E /* loading2.json in Resources */,
 				D09CE32F223B1C0200AFBAF4 /* Assets.xcassets in Resources */,
 				D09CE32D223B1C0100AFBAF4 /* Headline.storyboard in Resources */,
+				D0416711223EF651004FDA7E /* loading.json in Resources */,
 				D09CE36B223C99DB00AFBAF4 /* HeadlineCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -454,21 +466,44 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Headlines/Pods-Headlines-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Headlines/Pods-Headlines-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		D041670D223EF568004FDA7E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -483,6 +518,7 @@
 				D09CE362223BE43200AFBAF4 /* DataRequest+Additions.swift in Sources */,
 				D09CE36D223C9A7C00AFBAF4 /* HeadlineCell.swift in Sources */,
 				D0316ACC223ED8ED004C4192 /* WebContentViewController.swift in Sources */,
+				D041670F223EF5F7004FDA7E /* R.generated.swift in Sources */,
 				D09CE36F223CA31A00AFBAF4 /* IntroViewController.swift in Sources */,
 				D09CE35B223B38E700AFBAF4 /* RestError.swift in Sources */,
 				D09CE326223B1C0100AFBAF4 /* AppDelegate.swift in Sources */,

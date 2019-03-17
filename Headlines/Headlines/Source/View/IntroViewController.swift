@@ -9,25 +9,31 @@
 import UIKit
 import RxSwift
 import Lottie
+import Rswift
 
 class IntroViewController: UIViewController {
 
+    @IBOutlet weak var stackVie: UIStackView!
+    
     var headlines: [Headline]!
     var disposeBag = DisposeBag()
-//    var animationView: LOT
+    var animationView: AnimationView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidAppear(_ animated: Bool) {
+        addAnimation()
+        getHeadlines()
     }
     
     fileprivate func addAnimation() {
-//        animationView = LOTAnimationView(contentsOf: url)
-//        animationView.frame.size = CGSize(width: 90, height: 90)
-//        animationView.contentMode = .scaleAspectFill
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        getHeadlines()
+        animationView = AnimationView(url: R.file.loading2Json()!, closure: { (_) in
+
+        })
+        animationView.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        animationView.contentMode = .scaleAspectFill
+        stackVie.addArrangedSubview(animationView)
+        self.animationView.play(fromProgress: 0, toProgress: 0.8, loopMode: .loop) { (_) in
+            
+        }
     }
     
     fileprivate func getHeadlines() {
