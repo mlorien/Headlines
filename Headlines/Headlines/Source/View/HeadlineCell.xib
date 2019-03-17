@@ -15,7 +15,7 @@
                 <outlet property="alignLeading" destination="Pde-h5-J3D" id="KBx-Dm-U2I"/>
                 <outlet property="alignTrailing" destination="o01-Q0-pyk" id="aM0-Qr-iDQ"/>
                 <outlet property="coloredView" destination="8di-JQ-KuT" id="Tk6-Jw-pOV"/>
-                <outlet property="imageView" destination="8is-6U-BE3" id="UkQ-cC-BdQ"/>
+                <outlet property="myImageView" destination="8is-6U-BE3" id="PIE-8B-7dR"/>
                 <outlet property="titleLabel" destination="vu7-yx-Lc3" id="fv2-BA-jLG"/>
             </connections>
         </placeholder>
@@ -27,9 +27,9 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8is-6U-BE3">
                     <rect key="frame" x="0.0" y="0.0" width="384" height="192"/>
                 </imageView>
-                <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8di-JQ-KuT">
+                <view alpha="0.25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8di-JQ-KuT">
                     <rect key="frame" x="0.0" y="0.0" width="384" height="192"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Gambino underboss 'Franky Boy' Cali may have fallen into deadly trap set up by fender bender - NBC News" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vu7-yx-Lc3">
                     <rect key="frame" x="20" y="10" width="288" height="172"/>
