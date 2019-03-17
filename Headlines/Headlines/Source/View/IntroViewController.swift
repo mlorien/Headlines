@@ -35,6 +35,7 @@ class IntroViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let destination = segue.destination as? HeadlinesTableViewController else { return }
+//        guard let tableVC = destination.children.first as? HeadlinesTableViewController else { return }
         destination.headlines = headlines
     }
 

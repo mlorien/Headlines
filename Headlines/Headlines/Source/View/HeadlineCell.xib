@@ -12,52 +12,75 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeadlineCell" customModule="Headlines" customModuleProvider="target">
             <connections>
-                <outlet property="alignLeading" destination="Pde-h5-J3D" id="KBx-Dm-U2I"/>
-                <outlet property="alignTrailing" destination="o01-Q0-pyk" id="aM0-Qr-iDQ"/>
                 <outlet property="coloredView" destination="8di-JQ-KuT" id="Tk6-Jw-pOV"/>
                 <outlet property="myImageView" destination="8is-6U-BE3" id="PIE-8B-7dR"/>
+                <outlet property="superView" destination="iN0-l3-epB" id="nYc-rl-pos"/>
                 <outlet property="titleLabel" destination="vu7-yx-Lc3" id="fv2-BA-jLG"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="384" height="192"/>
+            <rect key="frame" x="0.0" y="0.0" width="427" height="406"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8is-6U-BE3">
-                    <rect key="frame" x="0.0" y="0.0" width="384" height="192"/>
-                </imageView>
-                <view alpha="0.25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8di-JQ-KuT">
-                    <rect key="frame" x="0.0" y="0.0" width="384" height="192"/>
-                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8di-JQ-KuT">
+                    <rect key="frame" x="0.0" y="0.0" width="427" height="390"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Gambino underboss 'Franky Boy' Cali may have fallen into deadly trap set up by fender bender - NBC News" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vu7-yx-Lc3">
-                    <rect key="frame" x="20" y="10" width="288" height="172"/>
-                    <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="21"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="EKs-B7-QGC">
+                    <rect key="frame" x="20" y="40" width="387" height="310.5"/>
+                    <subviews>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Trump calls on Fox News to 'bring back' Jeanine Pirro after her show goes off the air - Washington Examiner" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vu7-yx-Lc3">
+                            <rect key="frame" x="5" y="0.0" width="377" height="97.5"/>
+                            <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                            <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="20"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8is-6U-BE3">
+                            <rect key="frame" x="0.0" y="107.5" width="387" height="203"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="aUTHOR" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4El-U8-z65">
+                            <rect key="frame" x="0.0" y="307" width="387" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="21"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="date" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zr0-aQ-be2">
+                            <rect key="frame" x="0.0" y="328" width="387" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="21"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="8is-6U-BE3" firstAttribute="leading" secondItem="EKs-B7-QGC" secondAttribute="leading" id="Hon-av-7qA"/>
+                        <constraint firstItem="vu7-yx-Lc3" firstAttribute="leading" secondItem="EKs-B7-QGC" secondAttribute="leading" constant="5" id="L58-YH-8id"/>
+                        <constraint firstAttribute="trailing" secondItem="8is-6U-BE3" secondAttribute="trailing" id="yhf-Br-rQz"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="subviews">
+                            <exclude reference="4El-U8-z65"/>
+                            <exclude reference="zr0-aQ-be2"/>
+                        </mask>
+                    </variation>
+                </stackView>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="vu7-yx-Lc3" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="Ewh-lT-tdl"/>
-                <constraint firstAttribute="bottom" secondItem="vu7-yx-Lc3" secondAttribute="bottom" constant="10" id="GNP-vx-egD"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="8is-6U-BE3" secondAttribute="trailing" id="JMY-bo-94b"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="8di-JQ-KuT" secondAttribute="bottom" id="MKR-q5-JZf"/>
+                <constraint firstItem="EKs-B7-QGC" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="2qc-M5-D9e"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="EKs-B7-QGC" secondAttribute="trailing" constant="20" id="LDB-dK-hN0"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="8di-JQ-KuT" secondAttribute="bottom" constant="16" id="MKR-q5-JZf"/>
                 <constraint firstItem="8di-JQ-KuT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Mwz-vd-QwQ"/>
-                <constraint firstItem="vu7-yx-Lc3" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" priority="999" constant="20" id="Pde-h5-J3D"/>
-                <constraint firstItem="8is-6U-BE3" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="TqB-AJ-pph"/>
+                <constraint firstItem="8is-6U-BE3" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.5" id="QnZ-PL-Xcp"/>
                 <constraint firstItem="8di-JQ-KuT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="VAS-Jn-nq6"/>
-                <constraint firstItem="vu7-yx-Lc3" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.75" id="dJf-XO-FdH"/>
-                <constraint firstItem="vu7-yx-Lc3" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="fhy-LU-Pm3"/>
-                <constraint firstItem="8is-6U-BE3" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="nH8-Sq-FW4"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="vu7-yx-Lc3" secondAttribute="trailing" priority="998" constant="15" id="o01-Q0-pyk"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="8is-6U-BE3" secondAttribute="bottom" id="r5o-dK-niQ"/>
+                <constraint firstItem="EKs-B7-QGC" firstAttribute="centerY" secondItem="8di-JQ-KuT" secondAttribute="centerY" id="XqZ-ZL-rhC"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="8di-JQ-KuT" secondAttribute="trailing" id="yRb-Eg-C6h"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="145.59999999999999" y="-69.265367316341838"/>
+            <point key="canvasLocation" x="146.40000000000001" y="143.92803598200899"/>
         </view>
     </objects>
 </document>

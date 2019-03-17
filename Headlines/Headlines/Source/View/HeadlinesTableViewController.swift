@@ -11,23 +11,15 @@ import RxSwift
 
 class HeadlinesTableViewController: UIViewController  {
     
+    @IBOutlet var contentView: UIView!
+    
     let disposeBag = DisposeBag()
     var headlines: [Headline]!
+    let lighterGray = "EDF6F7".toUIColor()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-        view.backgroundColor = "1F2833".toUIColor()
-        setupNavigationBar()
-    }
-    
-    fileprivate func setupNavigationBar() {
-        guard let bar = navigationController?.navigationBar else { return }
-        bar.setBackgroundImage(UIImage(), for: .default)
-        bar.shadowImage = UIImage()
-        bar.isTranslucent = true
-        bar.barTintColor = .clear
-        bar.tintColor = .white
     }
     
     fileprivate func setupTableView() {
@@ -36,7 +28,8 @@ class HeadlinesTableViewController: UIViewController  {
         tableView.frame = view.frame
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.reloadData()
+        tableView.separatorStyle = .none
+        tableView.backgroundColor = lighterGray
     }
 
 }
@@ -54,7 +47,7 @@ extension HeadlinesTableViewController: UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 250
+        return 400
     }
-    
+
 }

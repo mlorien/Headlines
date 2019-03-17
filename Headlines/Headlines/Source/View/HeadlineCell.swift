@@ -11,18 +11,24 @@ import UIKit
 
 class HeadlineCell: UITableViewCell {
     
+    @IBOutlet var superView: UIView!
     @IBOutlet var coloredView: UIView!
     @IBOutlet weak var myImageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
-    @IBOutlet weak var alignTrailing: NSLayoutConstraint!
-    @IBOutlet weak var alignLeading: NSLayoutConstraint!
     
     var titleText: String!
+    var titleColor: UIColor!
     var alignment: NSTextAlignment!
     var imageURL: String!
     
     let darkBlue = "242D44".toUIColor()
     let lightPink = "D1C6C7".toUIColor()
+    let lightGreen = "F2FFF3".toUIColor()
+    let red = "C18383".toUIColor()
+    let lightBlue = "C7D5E5".toUIColor()
+    
+    let lightGray = "DCE4E5".toUIColor()
+    let lighterGray = "EDF6F7".toUIColor()
     
     override func didMoveToSuperview() {
         setup()
@@ -42,15 +48,17 @@ class HeadlineCell: UITableViewCell {
         setupLayout()
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        let margins = UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
+        contentView.frame = contentView.frame.inset(by: margins)
+    }
+    
     func setupLayout() {
         titleLabel.text = titleText
-        titleLabel.textColor = lightPink
-        titleLabel.backgroundColor = UIColor.black.withAlphaComponent(0.15)
-        if alignment == .left {
-            alignTrailing.priority = .defaultLow
-        } else {
-            alignLeading.priority = .defaultLow
-        }
+        titleLabel.textColor = titleColor
+        coloredView.backgroundColor = backgroundColor
+        superView.backgroundColor = lighterGray
         guard imageURL != nil else { return }
         setImage()
     }
@@ -67,13 +75,17 @@ class HeadlineCell: UITableViewCell {
                 URLCache.shared = urlCache
                 DispatchQueue.main.async {
                     self.myImageView.image = UIImage(data: data!)
+                    self.myImageView.layer.cornerRadius = 10
+                    self.myImageView.layer.masksToBounds = false
+                    self.myImageView.clipsToBounds = true
                 }
             }.resume()
     }
     
     func setup(with headline: Headline, even: Bool) {
-        titleText = headline.title.replacingOccurrences(of: " - ", with: "\n")
-        alignment = even ? .right : .left
+        titleText = headline.title//.replacingOccurrences(of: " - ", with: "\n")
+        backgroundColor = lightGray//even ? lightPink : lightGray
+        titleColor = darkBlue//even ? darkBlue : lightPink
         imageURL = headline.urlToImage
     }
     
