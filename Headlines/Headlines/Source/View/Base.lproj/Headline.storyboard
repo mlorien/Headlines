@@ -30,7 +30,7 @@
             </objects>
             <point key="canvasLocation" x="1300" y="-298"/>
         </scene>
-        <!--.-->
+        <!--Web Content View Controller-->
         <scene sceneID="Dbg-lc-KdZ">
             <objects>
                 <viewController id="HDN-5o-tus" customClass="WebContentViewController" customModule="Headlines" customModuleProvider="target" sceneMemberID="viewController">
@@ -56,7 +56,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nzd-Zs-J0z"/>
                     </view>
-                    <navigationItem key="navigationItem" title="." id="NF9-rZ-Dc9"/>
+                    <navigationItem key="navigationItem" id="NF9-rZ-Dc9">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="TaV-yF-XlS">
+                            <connections>
+                                <action selector="shareContent:" destination="HDN-5o-tus" id="EPd-fy-neD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="webView" destination="Apq-qQ-126" id="pqq-di-bXV"/>
                     </connections>
@@ -89,46 +95,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Wait just a minute while we catch the current top news for you..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="M2B-DE-fms">
-                                <rect key="frame" x="62.5" y="236" width="250" height="215"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="NRP-5I-Rep">
+                                <rect key="frame" x="52.5" y="283.5" width="270" height="120"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Wait just a minute while we catch the current top news for you" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="M2B-DE-fms">
+                                        <rect key="frame" x="0.0" y="0.0" width="270" height="120"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="120" id="xMO-Wv-0Bg"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="19"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="ZWZ-8m-sx7"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NRP-5I-Rep">
-                                <rect key="frame" x="87.5" y="288.5" width="200" height="110"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="408-oZ-u8y"/>
-                                    <constraint firstAttribute="height" constant="110" id="u78-SQ-WiO"/>
+                                    <constraint firstAttribute="width" constant="270" id="UkA-Y6-rDF"/>
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.24430003359999999" green="0.27534890629999997" blue="0.3791640228" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="NRP-5I-Rep" firstAttribute="centerX" secondItem="ePP-uc-V86" secondAttribute="centerX" id="ClU-Xh-xME"/>
                             <constraint firstItem="NRP-5I-Rep" firstAttribute="centerY" secondItem="ePP-uc-V86" secondAttribute="centerY" id="Hvb-ke-fYd"/>
-                            <constraint firstItem="M2B-DE-fms" firstAttribute="centerX" secondItem="ePP-uc-V86" secondAttribute="centerX" id="RQH-TI-0Kk"/>
-                            <constraint firstItem="M2B-DE-fms" firstAttribute="centerY" secondItem="ePP-uc-V86" secondAttribute="centerY" id="vPh-Nd-ugX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ePP-uc-V86"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="M2B-DE-fms"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
-                        <outlet property="stackVie" destination="NRP-5I-Rep" id="q9b-Hv-3FC"/>
+                        <outlet property="stackView" destination="NRP-5I-Rep" id="q9b-Hv-3FC"/>
                         <segue destination="ZN8-Cb-UXZ" kind="show" identifier="show" id="3pH-CU-QJh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NSm-Fx-Ocy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-257" y="-298"/>
+            <point key="canvasLocation" x="-258.39999999999998" y="-298.2008995502249"/>
         </scene>
     </scenes>
 </document>

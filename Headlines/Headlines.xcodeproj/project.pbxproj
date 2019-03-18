@@ -30,6 +30,7 @@
 		D09CE36D223C9A7C00AFBAF4 /* HeadlineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09CE36C223C9A7C00AFBAF4 /* HeadlineCell.swift */; };
 		D09CE36F223CA31A00AFBAF4 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09CE36E223CA31A00AFBAF4 /* IntroViewController.swift */; };
 		D09CE372223CAC0C00AFBAF4 /* String+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09CE371223CAC0C00AFBAF4 /* String+Additions.swift */; };
+		D09CE375223F12E200AFBAF4 /* UIViewController+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09CE374223F12E200AFBAF4 /* UIViewController+Additions.swift */; };
 		F1CD0CDF84413A0D2E8F9983 /* Pods_HeadlinesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 344D1052C55FBABEE6A30958 /* Pods_HeadlinesUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +88,7 @@
 		D09CE36C223C9A7C00AFBAF4 /* HeadlineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlineCell.swift; sourceTree = "<group>"; };
 		D09CE36E223CA31A00AFBAF4 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		D09CE371223CAC0C00AFBAF4 /* String+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Additions.swift"; sourceTree = "<group>"; };
+		D09CE374223F12E200AFBAF4 /* UIViewController+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Additions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,10 +251,19 @@
 		D09CE370223CABF200AFBAF4 /* BaseComponents */ = {
 			isa = PBXGroup;
 			children = (
+				D09CE376223F131400AFBAF4 /* Extensions */,
 				D09CE359223B38B600AFBAF4 /* RequestUtils */,
-				D09CE371223CAC0C00AFBAF4 /* String+Additions.swift */,
 			);
 			path = BaseComponents;
+			sourceTree = "<group>";
+		};
+		D09CE376223F131400AFBAF4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D09CE374223F12E200AFBAF4 /* UIViewController+Additions.swift */,
+				D09CE371223CAC0C00AFBAF4 /* String+Additions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -466,20 +477,16 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Headlines/Pods-Headlines-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -499,7 +506,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				$SRCROOT/R.generated.swift,
+				"$SRCROOT/R.generated.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -520,6 +527,7 @@
 				D0316ACC223ED8ED004C4192 /* WebContentViewController.swift in Sources */,
 				D041670F223EF5F7004FDA7E /* R.generated.swift in Sources */,
 				D09CE36F223CA31A00AFBAF4 /* IntroViewController.swift in Sources */,
+				D09CE375223F12E200AFBAF4 /* UIViewController+Additions.swift in Sources */,
 				D09CE35B223B38E700AFBAF4 /* RestError.swift in Sources */,
 				D09CE326223B1C0100AFBAF4 /* AppDelegate.swift in Sources */,
 				D09CE328223B1C0100AFBAF4 /* HeadlinesTableViewController.swift in Sources */,
