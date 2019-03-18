@@ -12,7 +12,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeadlineCell" customModule="Headlines" customModuleProvider="target">
             <connections>
+                <outlet property="authorLabel" destination="4El-U8-z65" id="s5t-CX-pLi"/>
                 <outlet property="coloredView" destination="8di-JQ-KuT" id="Tk6-Jw-pOV"/>
+                <outlet property="dateLabel" destination="zr0-aQ-be2" id="Ov5-Hn-X33"/>
                 <outlet property="myImageView" destination="8is-6U-BE3" id="PIE-8B-7dR"/>
                 <outlet property="superView" destination="iN0-l3-epB" id="nYc-rl-pos"/>
                 <outlet property="titleLabel" destination="vu7-yx-Lc3" id="fv2-BA-jLG"/>
@@ -28,7 +30,7 @@
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="EKs-B7-QGC">
-                    <rect key="frame" x="20" y="42.5" width="387" height="305.5"/>
+                    <rect key="frame" x="20" y="28" width="387" height="334"/>
                     <subviews>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Trump calls on Fox News to 'bring back' Jeanine Pirro after her show goes off the air - Washington Examiner" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vu7-yx-Lc3">
                             <rect key="frame" x="5" y="0.0" width="377" height="92.5"/>
@@ -39,32 +41,33 @@
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8is-6U-BE3">
                             <rect key="frame" x="0.0" y="102.5" width="387" height="203"/>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="aUTHOR" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4El-U8-z65">
-                            <rect key="frame" x="0.0" y="307" width="387" height="21"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="21"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="date" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zr0-aQ-be2">
-                            <rect key="frame" x="0.0" y="328" width="387" height="21"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="21"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="H4L-mE-2zw">
+                            <rect key="frame" x="0.0" y="315.5" width="387" height="18.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="aUTHOR" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4El-U8-z65">
+                                    <rect key="frame" x="0.0" y="0.0" width="207" height="18.5"/>
+                                    <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="15"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="31, march, 2018" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zr0-aQ-be2">
+                                    <rect key="frame" x="217" y="0.0" width="170" height="18.5"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="170" id="KVu-Db-Ek5"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="15"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
                     </subviews>
                     <constraints>
                         <constraint firstItem="8is-6U-BE3" firstAttribute="leading" secondItem="EKs-B7-QGC" secondAttribute="leading" id="Hon-av-7qA"/>
                         <constraint firstItem="vu7-yx-Lc3" firstAttribute="leading" secondItem="EKs-B7-QGC" secondAttribute="leading" constant="5" id="L58-YH-8id"/>
+                        <constraint firstItem="H4L-mE-2zw" firstAttribute="leading" secondItem="EKs-B7-QGC" secondAttribute="leading" id="OF2-TU-ztC"/>
                         <constraint firstAttribute="trailing" secondItem="8is-6U-BE3" secondAttribute="trailing" id="yhf-Br-rQz"/>
                     </constraints>
-                    <variation key="default">
-                        <mask key="subviews">
-                            <exclude reference="4El-U8-z65"/>
-                            <exclude reference="zr0-aQ-be2"/>
-                        </mask>
-                    </variation>
                 </stackView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
