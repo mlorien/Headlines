@@ -12,42 +12,48 @@ import RxSwift
 class HeadlinesTableViewController: UIViewController  {
     
     var headlines: [Headline]!
-    var selectedURL: String!
+    var filteredHeadlines: [Headline] = []
+    var tableView: UITableView!
     
     let disposeBag = DisposeBag()
     let lighterGray = "EDF6F7".toUIColor()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        filteredHeadlines = headlines
         setupTableView()
+        addSearchBar()
     }
     
     fileprivate func setupTableView() {
-        let tableView = UITableView()
-        view.addSubview(tableView)
+        tableView = UITableView()
         tableView.frame = view.frame
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
         tableView.backgroundColor = lighterGray
+        view.addSubview(tableView)
+        tableView.reloadData()
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let destination = segue.destination as? WebContentViewController else { return }
-        destination.url = selectedURL
+    fileprivate func addSearchBar() {
+        let searchBar = UISearchBar()
+        searchBar.delegate = self
+        searchBar.barTintColor = .black
+        navigationItem.titleView = searchBar
     }
 
 }
 
-extension HeadlinesTableViewController: UITableViewDelegate, UITableViewDataSource {
+extension HeadlinesTableViewController: UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return headlines.count
+        return filteredHeadlines.count//filteredHeadlines.isEmpty ? headlines.count : filteredHeadlines.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = HeadlineCell()
-        cell.setup(with: headlines[indexPath.row], even: indexPath.row % 2 == 0)
+        cell.setup(with: filteredHeadlines[indexPath.row])
         return cell
     }
     
@@ -57,8 +63,18 @@ extension HeadlinesTableViewController: UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let webVC = WebContentViewController()
-        webVC.url = headlines[indexPath.row].url
+        webVC.url = filteredHeadlines[indexPath.row].url
         navigationController?.pushViewController(webVC, animated: true)
+    }
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        guard searchText.isEmpty else {
+            filteredHeadlines = headlines.filter{ $0.title.contains(searchText) }
+            tableView.reloadData()
+            return
+        }
+        filteredHeadlines = headlines
+        tableView.reloadData()
     }
 
 }

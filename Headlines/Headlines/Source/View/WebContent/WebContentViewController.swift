@@ -18,7 +18,8 @@ class WebContentViewController: UIViewController, WKNavigationDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupWebView()
-        navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .action, target: self, action: #selector(shareContent(_:)))
+        let shareButton = UIBarButtonItem.init(barButtonSystemItem: .action, target: self, action: #selector(shareContent(_:)))
+        navigationItem.rightBarButtonItem = shareButton
     }
     
     override func viewDidAppear(_ animated: Bool) {

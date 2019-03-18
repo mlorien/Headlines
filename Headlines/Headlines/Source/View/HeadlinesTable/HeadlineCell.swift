@@ -86,8 +86,8 @@ class HeadlineCell: UITableViewCell {
             }.resume()
     }
     
-    func setup(with headline: Headline, even: Bool) {
-        titleText = headline.title//.replacingOccurrences(of: " - ", with: "\n")
+    func setup(with headline: Headline) {
+        titleText = headline.title
         backgroundColor = lightGray
         titleColor = darkBlue
         imageURL = headline.urlToImage
