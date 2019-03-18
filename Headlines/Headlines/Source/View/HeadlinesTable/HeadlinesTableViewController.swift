@@ -58,8 +58,9 @@ extension HeadlinesTableViewController: UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedURL = headlines[indexPath.row].url
-        performSegue(withIdentifier: "show", sender: Any?.self)
+        let webVC = WebContentViewController()
+        webVC.url = headlines[indexPath.row].url
+        navigationController?.pushViewController(webVC, animated: true)
     }
 
 }

@@ -11,13 +11,14 @@ import WebKit
 
 class WebContentViewController: UIViewController, WKNavigationDelegate {
 
-    @IBOutlet weak var webView: WKWebView!
-    
+    var webView = WKWebView()
     var url: String!
     var activyIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        webView.frame = view.frame
+        view.addSubview(webView)
         let myURL = URL(string: url!)
         let myRequest = URLRequest(url: myURL!)
         webView.load(myRequest)

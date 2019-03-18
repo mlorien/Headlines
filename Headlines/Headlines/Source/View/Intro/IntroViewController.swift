@@ -8,19 +8,19 @@
 
 import UIKit
 import RxSwift
-import Lottie
-import Rswift
 
 class IntroViewController: UIViewController {
-
-    @IBOutlet weak var stackView: UIStackView!
     
     var headlines: [Headline]!
     var disposeBag = DisposeBag()
     
     override func viewDidAppear(_ animated: Bool) {
+        let loadingView = LoadingView()
+        loadingView.frame = view.frame
+        view.addSubview(loadingView)
+        loadingView.stackView.addArrangedSubview(newActivityIndicator())
+        
         getHeadlines()
-        stackView.addArrangedSubview(newActivityIndicator())
     }
     
     fileprivate func getHeadlines() {
@@ -29,15 +29,12 @@ class IntroViewController: UIViewController {
             .asObservable()
             .subscribe(onNext: { headlineList in
                 self.headlines = headlineList.articles
-                self.performSegue(withIdentifier: "show", sender: Any?.self)
+                let vc = HeadlinesTableViewController()
+                vc.headlines = self.headlines
+                let navigationController = UINavigationController(rootViewController: vc)
+                self.present(navigationController, animated: true)
             })
             .disposed(by: disposeBag)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let destination = segue.destination as? UINavigationController else { return }
-        guard let tableVC = destination.children.first as? HeadlinesTableViewController else { return }
-        tableVC.headlines = headlines
     }
 
 }
