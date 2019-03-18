@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class HeadlineCell: UITableViewCell {
     
     @IBOutlet var superView: UIView!
