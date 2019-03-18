@@ -162,6 +162,14 @@
 			path = HeadlinesTable;
 			sourceTree = "<group>";
 		};
+		D06906BC223F2D7B00C49357 /* WebContent */ = {
+			isa = PBXGroup;
+			children = (
+				D0316ACB223ED8ED004C4192 /* WebContentViewController.swift */,
+			);
+			path = WebContent;
+			sourceTree = "<group>";
+		};
 		D09CE319223B1C0100AFBAF4 = {
 			isa = PBXGroup;
 			children = (
@@ -229,9 +237,9 @@
 		D09CE360223BE22200AFBAF4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D06906BC223F2D7B00C49357 /* WebContent */,
 				D06906BB223F283800C49357 /* HeadlinesTable */,
 				D06906BA223F282A00C49357 /* Intro */,
-				D0316ACB223ED8ED004C4192 /* WebContentViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";

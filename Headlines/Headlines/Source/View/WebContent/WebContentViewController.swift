@@ -17,12 +17,8 @@ class WebContentViewController: UIViewController, WKNavigationDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        webView.frame = view.frame
-        view.addSubview(webView)
-        let myURL = URL(string: url!)
-        let myRequest = URLRequest(url: myURL!)
-        webView.load(myRequest)
-        webView.navigationDelegate = self
+        setupWebView()
+        navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .action, target: self, action: #selector(shareContent(_:)))
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -31,11 +27,20 @@ class WebContentViewController: UIViewController, WKNavigationDelegate {
         webView.addSubview(activyIndicator)
     }
     
+    fileprivate func setupWebView() {
+        webView.frame = view.frame
+        view.addSubview(webView)
+        let myURL = URL(string: url!)
+        let myRequest = URLRequest(url: myURL!)
+        webView.load(myRequest)
+        webView.navigationDelegate = self
+    }
+    
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
         activyIndicator.removeFromSuperview()
     }
     
-    @IBAction func shareContent(_ sender: Any) {
+    @objc func shareContent(_ sender: Any) {
         let items = [URL(string: url)!]
         let vc = UIActivityViewController(activityItems: items, applicationActivities: nil)
         present(vc, animated: true)
