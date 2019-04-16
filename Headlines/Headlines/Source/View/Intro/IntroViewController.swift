@@ -10,15 +10,16 @@ import UIKit
 import RxSwift
 
 class IntroViewController: UIViewController {
-
+    
     var headlines: [Headline]!
     var disposeBag = DisposeBag()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     override func viewDidAppear(_ animated: Bool) {
+        let loadingView = LoadingView()
+        loadingView.frame = view.frame
+        view.addSubview(loadingView)
+        loadingView.stackView.addArrangedSubview(newActivityIndicator())
+        
         getHeadlines()
     }
     
@@ -28,15 +29,12 @@ class IntroViewController: UIViewController {
             .asObservable()
             .subscribe(onNext: { headlineList in
                 self.headlines = headlineList.articles
-                self.performSegue(withIdentifier: "show", sender: Any?.self)
+                let vc = HeadlinesTableViewController()
+                vc.headlines = self.headlines
+                let navigationController = UINavigationController(rootViewController: vc)
+                self.present(navigationController, animated: true)
             })
             .disposed(by: disposeBag)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let destination = segue.destination as? HeadlinesTableViewController else { return }
-//        guard let tableVC = destination.children.first as? HeadlinesTableViewController else { return }
-        destination.headlines = headlines
     }
 
 }

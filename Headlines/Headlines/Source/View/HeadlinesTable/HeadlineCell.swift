@@ -8,25 +8,22 @@
 
 import UIKit
 
-
 class HeadlineCell: UITableViewCell {
     
     @IBOutlet var superView: UIView!
     @IBOutlet var coloredView: UIView!
     @IBOutlet weak var myImageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
+    @IBOutlet weak var authorLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     
     var titleText: String!
     var titleColor: UIColor!
-    var alignment: NSTextAlignment!
+    var author: String!
+    var date: String!
     var imageURL: String!
     
-    let darkBlue = "242D44".toUIColor()
-    let lightPink = "D1C6C7".toUIColor()
-    let lightGreen = "F2FFF3".toUIColor()
-    let red = "C18383".toUIColor()
-    let lightBlue = "C7D5E5".toUIColor()
-    
+    let darkBlue = "32363F".toUIColor()
     let lightGray = "DCE4E5".toUIColor()
     let lighterGray = "EDF6F7".toUIColor()
     
@@ -57,6 +54,8 @@ class HeadlineCell: UITableViewCell {
     func setupLayout() {
         titleLabel.text = titleText
         titleLabel.textColor = titleColor
+        authorLabel.text = author
+        dateLabel.text = date
         coloredView.backgroundColor = backgroundColor
         superView.backgroundColor = lighterGray
         guard imageURL != nil else { return }
@@ -64,8 +63,13 @@ class HeadlineCell: UITableViewCell {
     }
     
     fileprivate func setImage() {
+        guard let url = URL(string: imageURL!) else {
+            myImageView.isHidden = true
+            return
+        }
+        myImageView.isHidden = false
         URLSession.shared
-            .dataTask(with: URL(string: imageURL!)!) { (data, response, error) in
+            .dataTask(with: url) { (data, response, error) in
                 guard error == nil else {
                     print(error!)
                     return
@@ -82,11 +86,13 @@ class HeadlineCell: UITableViewCell {
             }.resume()
     }
     
-    func setup(with headline: Headline, even: Bool) {
-        titleText = headline.title//.replacingOccurrences(of: " - ", with: "\n")
-        backgroundColor = lightGray//even ? lightPink : lightGray
-        titleColor = darkBlue//even ? darkBlue : lightPink
+    func setup(with headline: Headline) {
+        titleText = headline.title
+        backgroundColor = lightGray
+        titleColor = darkBlue
         imageURL = headline.urlToImage
+        author = headline.author
+        date = String(headline.publishedAt.prefix(10))
     }
     
 }

@@ -25,8 +25,7 @@ public struct Headline: Decodable {
     var description: String!
     var publishedAt: String!
     var urlToImage: String!
-    
-    var image: UIImage!
+    var url: String!
     
     public enum CodingKeys: String, CodingKey {
         case author
@@ -34,6 +33,7 @@ public struct Headline: Decodable {
         case description
         case publishedAt
         case urlToImage
+        case url
     }
     
 }
